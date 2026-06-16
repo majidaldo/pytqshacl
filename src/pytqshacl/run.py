@@ -30,7 +30,7 @@ def cmd(
     if (shacl_cp == NOTSET) or (logging == NOTSET):
         raise EnvironmentError("shacl_cp or logging not set")
     
-    logging = f"-Dlog4j.configurationFile={logging}" if logging else ''
+    logging = f'-Dlog4j.configurationFile="{logging}"' if logging else ''
     # class path
     # quote so no funny shell parsing happens (on linux)
     shacl_cp = f"-cp \"{shacl_cp}\"" 
